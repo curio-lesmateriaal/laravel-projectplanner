@@ -24,3 +24,4 @@ Route::get('test', function() {
 Route::get('projects', [ProjectsController::class, 'index']); //master
 Route::get('projects/{id}', [ProjectsController::class, 'show']); // detail
 Route::get('projects/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit'); // edit
+Route::put('projects/{id}/edit', ProjectsController::class, 'update')->name('projects.update'); // update

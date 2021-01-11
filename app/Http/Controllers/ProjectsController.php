@@ -42,6 +42,20 @@ class ProjectsController extends Controller
         ]);
     }
 
+    public function update(Request $request, $id) {
+        $project = Project::findOrFail($id);
+        $project->title = $request->title;
+        $project->startdate = $request->startdate; 
+        $project->enddate = $request->enddate; 
+        $project->description = $request->description; 
+        $project->status = $request->status;
+        $project->save(); 
+
+        return redirect()->route('projects.show', $id);
+        
+    }
+    
+
 
    
 

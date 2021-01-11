@@ -7,8 +7,9 @@
 @section('content')
     {{$project}}
     <h1>Edit project</h1>
-    <form action="" method="POST">
-        
+    <form action="{{route('projects.update', $project->id)}}" method="POST">
+        @csrf 
+        @method('PUT')
         <div class="form-group">
             <label for="">Titel</label>
             <input value="{{$project->title}}" type="text" name="title" class="form-control">
